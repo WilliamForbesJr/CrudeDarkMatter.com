@@ -1,0 +1,515 @@
+@import "normalize.css";
+@import "main.css";
+@import "device.scss";
+
+:root {
+  /* ========================================================= *
+   *                    Color Definitions                      *
+   * ========================================================= */
+
+  --black:    #1b2d45;
+  --green:    #0B1A23;
+  --greenDark: #050C0F;
+  --red:      #FF5470;
+  --yellow:   #fde24f;
+
+  --darkBlue: #0B1C40;
+
+  /** Neutral Colors */
+  --white:    #fff;
+  --greyLight:#f2f4f6;
+  --grey:     #bfbfbf;
+  --greyDark: #222;
+  --googleGrey: #121212;
+
+  /* ========================================================= *
+   *                    Color Intentions                       *
+   * ========================================================= */
+
+   /** Theme Colors */
+  --primary:   var(--green);
+  --secondary: var(--red);
+
+  /** Utility Colors */
+  --danger: var(--red);
+
+  /** Text Colors */
+  --textColor:        rgba(255, 255, 255, .75);
+  --buttonTextColor:  var(--black);
+
+  /** Background Colors */
+  --background:       var(--googleGrey);
+  --buttonBackground: var(--primary);
+  --cardBackground:   var(--greyDark);
+  --headerBackground: var(--green);
+  --footerBackground: var(--googleGrey);
+
+  /** Misc Colors */
+  --lineColor: var(--grey);
+
+  /* ========================================================= *
+   *                    Typography                             *
+   * ========================================================= */
+
+  --headingFont: 'Rubik', sans-serif;
+  --bodyFont:    'Karla', sans-serif;
+
+  --baseFontSize: 100%; /* 16px */
+  --smallText: 0.8rem;
+
+  /** Headings */
+  --h1: 3.052rem;
+  --h2: 2.441rem;
+  --h3: 1.953rem;
+  --h4: 1.563rem;
+  --h5: 1.25rem;
+
+  --font-weight__base: 400;
+  --line-height__base: 1.75;
+
+  /* ========================================================= *
+   *                    Elevation                              *
+   * ========================================================= */
+
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+              0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+              0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* ========================================================= *
+   *                    Positioning                            *
+   * ========================================================= */
+
+  --containerPaddingX: 2.5%;
+  --containerPaddingY: 2rem;
+
+  --headerHeight: 3rem;
+  --borderRadius: 10px;
+
+  /* ========================================================= *
+   *                    Styles                                 *
+   * ========================================================= */
+
+  --line: solid 1px var(--lineColor);
+}
+
+html {
+  font-size: var(--baseFontSize);
+  box-sizing: border-box;
+}
+
+/* Box-sizing reset - padding is taken into account when calculating width */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--bodyFont);
+  font-weight: var(--font-weight__base);
+  line-height: var(--line-height__base);
+
+  background: var(--background);
+  color: var(--textColor);
+}
+
+p a, blockquote a {
+  color: var(--textColor);
+  text-decoration: none;
+  border-bottom: solid 2px var(--primary);
+}
+
+blockquote {
+  margin: 10px;
+  padding: 2em;
+  box-shadow: var(--shadow-3);
+}
+
+hr {
+  border-top: var(--line);
+}
+
+/* ================================================================================
+ *                              FROM: TYPESCALE
+ * ==============================================================================*/
+
+@import url('https://fonts.googleapis.com/css?family=Karla:400|Rubik:400');
+
+p {
+  margin-bottom: 1rem;
+  max-width: 40em;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 3rem 0 1.38rem;
+  font-family: var(--headingFont);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2)
+}
+
+h3 {
+  font-size: var(--h3)
+}
+
+h4 {
+  font-size: var(--h4);
+}
+
+h5 {
+  font-size: var(--h5);
+}
+
+small, .text_small {
+  font-size: var(--smallText);
+}
+
+/* ==============================================================================
+ *                                     FORMS
+ * ==============================================================================
+ */
+
+label {
+  display: block;
+  font-size: var(--smallText);
+}
+
+input,
+textarea {
+  border: var(--line);
+  border-radius: 4px;
+  padding: 4px 5px;
+}
+
+textarea {
+  width: 100%;
+  height: 5rem;
+}
+
+::placeholder {
+  color: var(--grey);
+}
+
+select {
+  border: var(--line);
+}
+
+/* ==============================================================================
+ *                                     BUTTONS
+ * ==============================================================================
+ */
+
+button {
+  appearance: none;
+  color: var(--buttonTextColor);
+  background-color: var(--buttonBackground);
+  border: none;
+  border-radius: var(--borderRadius);
+  padding: 5px 25px;
+  box-shadow: var(--shadow-1);
+
+  &:hover {
+    box-shadow: var(--shadow-2);
+    transition: 0.3s ease-in-out box-shadow;
+  }
+}
+
+button[disabled] {
+  opacity: 0.4;
+}
+
+.button--small {
+  font-size: var(--smallText);
+}
+
+.button--cancel {
+  --buttonBackground: var(--danger);
+  --buttonTextColor: var(--white);
+}
+
+/* ==============================================================================
+ *                                     CARD
+ * ==============================================================================
+ */
+
+.card {
+  padding: 2em;
+  background: var(--cardBackground);
+  box-shadow: var(--shadow-3);
+  border-radius: var(--borderRadius);
+
+  /** First and last child will not have respective top/bottom margins */
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.logo {
+  font-size: var(--baseFontSize);
+  margin: 0;
+}
+
+.hero {
+  height: 700px;
+  background-color: var(--greenDark);
+}
+
+iframe.video-preview {
+  width: 900px;
+  height: 550px;
+  position: absolute;
+  left: -300px;
+  top: 30px;
+}
+
+.hero__section--phone-preview {
+  display: none;
+  
+  @media only screen and (min-width: 1024px) {
+    display: block;
+  }
+}
+
+.marvel-device.iphone-x.phone__image {
+  margin-top: 100px;
+  width: 300px;
+  height: 600px;
+}
+
+.marvel-device.iphone-x.phone__image .screen {
+  background: black;
+}
+
+.hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero__section {
+  max-height: 100%;
+}
+
+.hero__logo {
+  max-width: 100%;
+  width: 600px;
+}
+
+.hero__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  max-height: 100%;
+  width: 100%;
+}
+
+.hero__downloadButton {
+  height: 70px;
+}
+
+.hero__downloadButton--google {
+  height: 100px;
+}
+
+.hero__mockup {
+  max-height: 800px;
+}
+
+/* ==============================================================================
+ *                                     HEADER
+ * ==============================================================================
+ */
+
+.header {
+  color: var(--white);
+  height: var(--headerHeight);
+  // background: var(--headerBackground);
+  box-shadow: var(--shadow-2);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--containerPaddingX);
+
+  /* Fixed Heading Modifier */
+  &--fixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.header__nav {
+  a {
+    color: var(--textColor);
+    text-decoration: none;
+
+    + a {
+      margin-left: 10px;
+    }
+  }
+}
+
+/* ==============================================================================
+ *                                     FOOTER
+ * ==============================================================================
+ */
+
+footer {
+  color: var(--greyLight);
+  background: var(--footerBackground);
+  padding: var(--containerPaddingY) var(--containerPaddingX);
+  text-align: center;
+
+  a {
+    color: var(--footerTextColor);
+  }
+
+  p {
+    margin-bottom: 0;
+    max-width: none;
+  }
+}
+
+/* ==============================================================================
+ *                                     LAYOUT
+ * ==============================================================================
+ */
+
+.layout {
+  /* Header height + chosen visual padding */
+  padding: var(--containerPaddingY) var(--containerPaddingX);
+}
+
+.container {
+  max-width: 1220px;
+  height: 100%;
+  margin: 0px auto;
+
+  max-width: 1220px;
+  padding: 0 var(--containerPaddingX);
+}
+
+/* --------------------
+ *        GRID
+ * -------------------*/
+
+.grid {
+  --gridCols: 2;
+
+  display: block;
+  grid-template-columns: repeat(var(--gridCols), 1fr);
+}
+
+.grid--cols-3 {
+  --gridCols: 3;
+}
+
+/* 1/3-2/3 Split */
+.grid--split {
+  grid-template-columns: 33% 67%;
+  grid-gap: 20px;
+}
+
+/* --------------------
+ *       FLEXBOX
+ * -------------------*/
+
+.flex {
+  --justifyContent: space-between;
+
+  display: flex;
+  justify-content: var(--justifyContent);
+  flex-wrap: wrap;
+}
+
+.flex--around {
+  --justifyContent: space-around;
+}
+
+.flex--center {
+  --justifyContent: center;
+}
+
+.flex__align--center {
+  align-items: center;
+}
+
+/* ================================================================================
+ *                                     SPACING
+ * ==============================================================================*/
+.px-8 {
+  padding: 0 8px 0 8px;
+}
+
+.py-8 {
+  padding: 8px 0 8px 0;
+}
+
+.pt-32 {
+  padding: 32px 0 0 0;
+}
+
+.pb-32 {
+  padding: 0 0 32px 0;
+}
+
+.mx-8 {
+  margin: 0 8px 0 8px;
+}
+
+.my-8 {
+  margin: 8px 0 8px 0;
+}
+
+.mx-32 {
+  margin: 0 32px 0 32px;
+}
+
+.mt-32 {
+  margin: 32px 0 0 0;
+}
+
+.mb-32 {
+  padding: 0 0 32px 0;
+}
+
+/* ================================================================================
+ *                                     MEDIA QUERIES
+ * ==============================================================================*/
+
+/** Ensures grid and flex items are block-level elements on mobile for responsive design */
+@media only screen and (min-width: 500px) {
+  :root {
+    --baseFontSize: 112.5%; /* 18px */
+  }
+
+  .grid {
+    display: grid,
+  }
+}
