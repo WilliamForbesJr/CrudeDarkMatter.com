@@ -8,9 +8,11 @@ import Layout from '../components/Layout';
 import Seo from '../components/seo';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
+import Card from '../components/Card';
 
 import Icon1 from '../images/Sagittarius.png';
-import screenShot from '../images/boss_ss.png';
+import screenshot from '../images/boss_ss.png';
+import stars from '../images/stars.svg';
 
 /**
  * @todo
@@ -30,14 +32,22 @@ const IndexPage = () => (
         offset={0}
         speed={0}
         factor={2}
-        style={{backgroundImage: 'url(https://awv3node-homepage.surge.sh/build/assets/stars.svg)', backgroundSize: 'cover'}}
+        style={{
+          backgroundImage: `linear-gradient(#000000b3 40%, #0a3855a1 100%), url(${stars})`,
+          backgroundSize: 'cover'
+        }}
       />
 
       <ParallaxLayer
-        offset={.2}
-        speed={.2}
+        offset={.3}
+        speed={.5}
         factor={3}
-        style={{backgroundImage: 'url(https://awv3node-homepage.surge.sh/build/assets/stars.svg)', backgroundSize: 'cover', position: 'absolute', left: '-100px'}}
+        style={{
+          backgroundImage: `url(${stars})`,
+          backgroundSize: 'cover',
+          position: 'absolute',
+          left: '-100px'
+        }}
       /> 
 
       
@@ -50,33 +60,14 @@ const IndexPage = () => (
       </ParallaxLayer>
       
 
-      <ParallaxLayer offset={1.1} speed={.5}>
+      <ParallaxLayer offset={1.1} speed={.1}>
         <Section>
-          <div className="grid grid--cols-3">
-            <div className="card mx-8">
-              <div className="flex flex--center">
-                <img src={screenShot} alt="" srcset=""style={{maxWidth: '300px'}} />
-              </div>
-                <h4>Some text!</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Veniam, veritatis sit eum tempora ab natus consequatur, mollitia nostrum,
-                qui amet voluptatum magni earum? Nihil, possimus quaerat nesciunt nemo id ipsa
-              </p>
-            </div>
-            <div className="card mx-8">
-              <h3>Some text!</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Veniam, veritatis sit eum tempora ab natus consequatur, mollitia nostrum,
-                qui amet voluptatum magni earum? Nihil, possimus quaerat nesciunt nemo id ipsa
-              </p>
-            </div>
-            <div className="card mx-8">
-            <h3>Some text!</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Veniam, veritatis sit eum tempora ab natus consequatur, mollitia nostrum,
-                qui amet voluptatum magni earum? Nihil, possimus quaerat nesciunt nemo id ipsa
-              </p>
-            </div>
+          <div className="">
+            <Card
+              image={screenshot}
+              title={'Title'}
+              content={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, fugiat adipisci reprehenderit asperiores voluptates cupiditate porro deleniti consequuntur tempora impedit, qui magni aliquam vel. Quae vel quidem dignissimos natus minus?'}
+            />
           </div>
         </Section>
         

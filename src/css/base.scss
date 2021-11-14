@@ -19,8 +19,7 @@
   --white:    #fff;
   --greyLight:#f2f4f6;
   --grey:     #bfbfbf;
-  --greyDark: #222;
-  --googleGrey: #121212;
+  --greyDark: #121212;
 
   /* ========================================================= *
    *                    Color Intentions                       *
@@ -38,11 +37,11 @@
   --buttonTextColor:  var(--black);
 
   /** Background Colors */
-  --background:       var(--googleGrey);
+  --background:       var(--greyDark);
   --buttonBackground: var(--primary);
   --cardBackground:   var(--greyDark);
-  --headerBackground: var(--green);
-  --footerBackground: var(--googleGrey);
+  --headerBackground: var(--greyDark);
+  --footerBackground: var(--greyDark);
 
   /** Misc Colors */
   --lineColor: var(--grey);
@@ -347,7 +346,7 @@ iframe.video-preview {
 .header {
   color: var(--white);
   height: var(--headerHeight);
-  // background: var(--headerBackground);
+  background: var(--headerBackground);
   box-shadow: var(--shadow-2);
 
   display: flex;
