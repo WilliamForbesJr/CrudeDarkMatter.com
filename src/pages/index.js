@@ -51,8 +51,8 @@ const IndexPage = () => (
       /> 
 
       
-      <ParallaxLayer offset={1.99} speed={-3} style={{ width: '15%', marginLeft: '70%'}}>
-        <img src={Icon1} style={{maxWidth: '100px'} }/>
+      <ParallaxLayer offset={1.99} speed={-2} style={{ width: '15%', marginLeft: '70%'}}>
+        <img className="imagetest" src={Icon1} style={{maxWidth: '100px'} }/>
       </ParallaxLayer>
       
       <ParallaxLayer offset={0} speed={1}>
@@ -62,7 +62,7 @@ const IndexPage = () => (
 
       <ParallaxLayer offset={1.1} speed={.1}>
         <Section>
-          <div className="">
+          <div>
             <Card
               image={screenshot}
               title={'Title'}

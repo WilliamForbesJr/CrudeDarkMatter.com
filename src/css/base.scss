@@ -512,3 +512,14 @@ footer {
     display: grid,
   }
 }
+
+.imagetest {
+  animation: myOrbit 4s linear infinite;
+}
+
+// Test animation for enemy asset. Move to react spring and setup temporary
+// appearance/animatin of characters
+@keyframes myOrbit {
+  from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
